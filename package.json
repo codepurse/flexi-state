@@ -13,7 +13,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "microbundle": "^0.15.1",
