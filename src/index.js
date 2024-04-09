@@ -7,7 +7,7 @@ export const createStore = (initializeStore) => {
   const getState = () => state;
 
   const setState = (newState) => {
-    if (shallowEqual(state, newState)) return; // Check for shallow equality before updating state
+    if (shallowEqual(state, newState)) return;
     state = newState; // Update state directly
     listeners.forEach((listener) => listener(state));
   };
