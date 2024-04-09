@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const createStore = (initializeStore, middleware = (store) => store) => {
+export const createStore = (initializeStore) => {
   let state = initializeStore(null);
   let listeners = new Set();
   let stateInitializer = initializeStore;
@@ -52,7 +52,6 @@ export const createStore = (initializeStore, middleware = (store) => store) => {
 
       const unsubscribe = subscribe(listener);
 
-      // Clean up subscription
       return () => {
         unsubscribe();
       };
