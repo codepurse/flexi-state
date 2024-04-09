@@ -2,28 +2,20 @@ import { useEffect, useState } from "react";
 
 export const createStore = (initializeStore) => {
   let state = initializeStore(null);
-  let listeners = new Set();
-  let stateInitializer = initializeStore;
+  let listeners = [];
 
-  const getState = () => {
-    if (state === undefined) {
-      state = stateInitializer(null);
-      stateInitializer = null;
-    }
-    return state;
-  };
+  const getState = () => state;
 
   const setState = (newState) => {
-    const updatedState = deepMerge(state, newState);
-    if (shallowEqual(state, updatedState)) return;
-    state = updatedState;
+    if (shallowEqual(state, newState)) return; // Check for shallow equality before updating state
+    state = newState; // Update state directly
     listeners.forEach((listener) => listener(state));
   };
 
   const subscribe = (listener) => {
-    listeners.add(listener);
+    listeners.push(listener);
     return () => {
-      listeners.delete(listener);
+      listeners = listeners.filter((l) => l !== listener);
     };
   };
 
@@ -31,8 +23,9 @@ export const createStore = (initializeStore) => {
   for (const [key, action] of Object.entries(initializeStore(state))) {
     if (typeof action === "function") {
       actions[key] = (...args) => {
-        const updater = action(...args);
-        const newState = updater(state);
+        console.log("Action:", key);
+        const updater = action(...args); // Get the updater function
+        const newState = updater(state); // Call the updater function with the current state
         setState(newState);
       };
     }
@@ -42,26 +35,23 @@ export const createStore = (initializeStore) => {
     const [currentState, setCurrentState] = useState(selector(getState()));
 
     useEffect(() => {
-      const listener = (newState) => {
+      const unsubscribe = subscribe((newState) => {
         const selectedState = selector(newState);
         if (!shallowEqual(currentState, selectedState)) {
+          // Update state only if it has changed
           setCurrentState(selectedState);
         }
-      };
-
-      const unsubscribe = subscribe(listener);
-
-      return () => {
-        unsubscribe();
-      };
+      });
+      return unsubscribe;
     }, [selector]);
 
-    return { ...currentState, ...actions, getState, setState, subscribe };
+    return { ...currentState, ...actions }; // Return both state and actions
   };
 };
 
 const shallowEqual = (objA, objB) => {
   if (objA === objB) return true;
+
   if (
     typeof objA !== "object" ||
     objA === null ||
@@ -71,31 +61,14 @@ const shallowEqual = (objA, objB) => {
     return false;
   }
 
-  for (const key in objA) {
-    if (objA.hasOwnProperty(key)) {
-      if (!objB.hasOwnProperty(key) || objA[key] !== objB[key]) {
-        return false;
-      }
-    }
+  const keysA = Object.keys(objA);
+  const keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) return false;
+
+  for (let key of keysA) {
+    if (!objB.hasOwnProperty(key) || objA[key] !== objB[key]) return false;
   }
 
-  for (const key in objB) {
-    if (objB.hasOwnProperty(key) && !objA.hasOwnProperty(key)) {
-      return false;
-    }
-  }
-  //
   return true;
-};
-
-const deepMerge = (target, source) => {
-  const result = { ...target };
-  for (const key in source) {
-    if (typeof source[key] === "object" && source[key] !== null) {
-      result[key] = deepMerge(target[key] || {}, source[key]);
-    } else {
-      result[key] = source[key];
-    }
-  }
-  return result;
 };
