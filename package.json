@@ -1,8 +1,9 @@
 {
   "name": "@codepurse/lite-state",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "type": "module",
   "source": "src/index.js",
+  "sideEffects": false,
   "exports": {
     "types": "./dist/index.d.ts",
     "require": "./dist/index.cjs",
@@ -13,7 +14,7 @@
   "unpkg": "./dist/index.umd.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx",
     "dev": "microbundle watch",
     "test": "echo 'Tests passed successfully!'"
   },

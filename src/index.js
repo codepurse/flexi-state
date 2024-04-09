@@ -51,7 +51,6 @@ export const createStore = (initializeStore, middleware = (store) => store) => {
         }
       };
 
-      // Subscribe to the store
       const unsubscribe = subscribe(listener);
 
       // Clean up subscription
