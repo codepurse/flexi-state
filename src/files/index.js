@@ -84,7 +84,7 @@ const shallowEqual = (objA, objB) => {
       return false;
     }
   }
-
+  //
   return true;
 };
 
