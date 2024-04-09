@@ -25,7 +25,7 @@ export const createStore = (initializeStore) => {
       actions[key] = (...args) => {
         console.log("Action:", key);
         const updater = action(...args); // Get the updater function
-        const newState = updater(state); // Call the updater function with the current state
+        const newState = updater(state);
         setState(newState);
       };
     }
