@@ -1,21 +1,30 @@
 import { useEffect, useState } from "react";
+import { deepMerge, shallowEqual } from "./util/utils";
 
-export const createStore = (initializeStore) => {
+export const createStore = (initializeStore, middleware = (store) => store) => {
   let state = initializeStore(null);
-  let listeners = [];
+  let listeners = new Set();
+  let stateInitializer = initializeStore;
 
-  const getState = () => state;
+  const getState = () => {
+    if (state === undefined) {
+      state = stateInitializer(null);
+      stateInitializer = null;
+    }
+    return state;
+  };
 
   const setState = (newState) => {
-    if (shallowEqual(state, newState)) return;
-    state = newState; // Update state directly
+    const updatedState = deepMerge(state, newState);
+    if (shallowEqual(state, updatedState)) return;
+    state = updatedState;
     listeners.forEach((listener) => listener(state));
   };
 
   const subscribe = (listener) => {
-    listeners.push(listener);
+    listeners.add(listener);
     return () => {
-      listeners = listeners.filter((l) => l !== listener);
+      listeners.delete(listener);
     };
   };
 
@@ -23,8 +32,7 @@ export const createStore = (initializeStore) => {
   for (const [key, action] of Object.entries(initializeStore(state))) {
     if (typeof action === "function") {
       actions[key] = (...args) => {
-        console.log("Action:", key);
-        const updater = action(...args); // Get the updater function
+        const updater = action(...args);
         const newState = updater(state);
         setState(newState);
       };
@@ -35,40 +43,23 @@ export const createStore = (initializeStore) => {
     const [currentState, setCurrentState] = useState(selector(getState()));
 
     useEffect(() => {
-      const unsubscribe = subscribe((newState) => {
+      const listener = (newState) => {
         const selectedState = selector(newState);
         if (!shallowEqual(currentState, selectedState)) {
           // Update state only if it has changed
           setCurrentState(selectedState);
         }
-      });
-      return unsubscribe;
+      };
+
+      // Subscribe to the store
+      const unsubscribe = subscribe(listener);
+
+      // Clean up subscription
+      return () => {
+        unsubscribe();
+      };
     }, [selector]);
 
-    return { ...currentState, ...actions }; // Return both state and actions
+    return { ...currentState, ...actions };
   };
-};
-
-const shallowEqual = (objA, objB) => {
-  if (objA === objB) return true;
-
-  if (
-    typeof objA !== "object" ||
-    objA === null ||
-    typeof objB !== "object" ||
-    objB === null
-  ) {
-    return false;
-  }
-
-  const keysA = Object.keys(objA);
-  const keysB = Object.keys(objB);
-
-  if (keysA.length !== keysB.length) return false;
-
-  for (let key of keysA) {
-    if (!objB.hasOwnProperty(key) || objA[key] !== objB[key]) return false;
-  }
-
-  return true;
 };
