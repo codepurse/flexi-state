@@ -1,6 +1,6 @@
 {
   "name": "@codepurse/lite-state",
-  "version": "1.0.3",
+  "version": "0.0.8",
   "type": "module",
   "source": "src/index.js",
   "exports": {

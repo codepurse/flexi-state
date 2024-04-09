@@ -1,1 +1,1 @@
-export * from "./files";
+export function createStore(initializeStore: any): (selector?: () => any) => any;
