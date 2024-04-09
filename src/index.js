@@ -45,7 +45,6 @@ export const createStore = (initializeStore) => {
       const listener = (newState) => {
         const selectedState = selector(newState);
         if (!shallowEqual(currentState, selectedState)) {
-          // Update state only if it has changed
           setCurrentState(selectedState);
         }
       };
