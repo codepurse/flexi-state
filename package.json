@@ -1,12 +1,9 @@
 {
   "name": "@codepurse/lite-state",
-  "version": "2.0.9",
+  "version": "2.0.11",
   "type": "module",
   "sideEffects": false,
-  "source": [
-    "src/index.js",
-    "src/middleware/index.js"
-  ],
+  "source": "src/index.js",
   "exports": {
     "types": "./dist/index.d.ts",
     "require": "./dist/index.cjs",
