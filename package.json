@@ -1,22 +1,16 @@
 {
   "name": "@codepurse/lite-state",
-  "version": "2.0.7",
+  "version": "2.0.9",
   "type": "module",
   "sideEffects": false,
-  "source": "src/index.js",
+  "source": [
+    "src/index.js",
+    "src/middleware/index.js"
+  ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.esm.js"
-    },
-    "./middleware": {
-      "types": "./src/middleware/index.d.ts",
-      "browser": "./dist/middlware.module.js",
-      "umd": "./dist/middlware.umd.js",
-      "import": "./dist/middlware.mjs",
-      "require": "./dist/middlware.js"
-    }
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.esm.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
