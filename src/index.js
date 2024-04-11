@@ -1,2 +1,5 @@
 export * from "./createStore";
-export { HydrateState, broadcast, logging, preserve } from "./middleware";
+export { channelBroadcast } from "./middleware/broadcast";
+export { HydrateState } from "./middleware/hydrateState";
+export { logging } from "./middleware/logging";
+export { preserve } from "./middleware/preserve";
