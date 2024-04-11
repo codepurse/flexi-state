@@ -1,1 +1,1 @@
-export function createStore(initializeStore: any, middleware?: (store: any) => any): (selector?: () => any) => any;
+export function createStore(initializeStore: any, middlewares?: any[]): (selector?: () => any) => any;
