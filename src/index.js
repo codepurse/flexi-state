@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { deepMerge, shallowEqual } from "./util/utils";
 
-export const createStore = (initializeStore, middleware = (store) => store) => {
-  let state = initializeStore(null);
+export const createStore = (initializeStore, middlewares = []) => {
+  let state = initializeStore({});
   let listeners = new Set();
   let stateInitializer = initializeStore;
 
@@ -39,27 +39,38 @@ export const createStore = (initializeStore, middleware = (store) => store) => {
     }
   }
 
-  return (selector = getState) => {
-    const [currentState, setCurrentState] = useState(selector(getState()));
+  const useStore = (selector = getState) => {
+    const stateRef = useRef(selector(state)); // Initialize with initial state
+    const [_, forceUpdate] = useReducer((x) => x + 1, 0);
 
     useEffect(() => {
       const listener = (newState) => {
         const selectedState = selector(newState);
-        if (!shallowEqual(currentState, selectedState)) {
-          // Update state only if it has changed
-          setCurrentState(selectedState);
+        if (stateRef.current !== selectedState) {
+          stateRef.current = selectedState;
+          forceUpdate();
         }
       };
 
-      // Subscribe to the store
       const unsubscribe = subscribe(listener);
-
-      // Clean up subscription
       return () => {
         unsubscribe();
       };
     }, [selector]);
 
-    return { ...currentState, ...actions };
+    return {
+      ...stateRef.current,
+      ...actions,
+      getState,
+      setState,
+      subscribe,
+    };
   };
+
+  // Apply middlewares
+  middlewares.forEach((middleware) =>
+    middleware({ getState, setState, subscribe })
+  );
+
+  return useStore;
 };
