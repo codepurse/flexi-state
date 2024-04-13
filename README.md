@@ -27,22 +27,22 @@ A next-generation CLI tool that makes it easy to create amazing web applications
 
 </div>
 
-## ✨ Features
 
-- 100% **free** and **open source** under the [Apache 2.0][repo_license_url] license.
-- For **any** developer's level of knowledge and technical expertise, as the intelligent CLI does most of the routine project setup for you, creates an understandable structure, and prepares code for use and deployment in production.
-- Cross-platform and multi-architecture allows **successful running** on any GNU/Linux distros, Microsoft Windows (including WSL) and Apple macOS.
-- [**Well-documented**][docs_url], includes translations in **many other languages** ([Русский][docs_ru_url], [简体中文][docs_zh_hk_url], [Español][docs_es_url]).
-- Enables you to **start a new project faster** with [Go][go_url], [htmx][htmx_url], [hyperscript][hyperscript_url] or [Alpine.js][alpinejs_url] libraries.
-- Supports the built-in [net/http][go_net_http_url] package and the most popular **Go web frameworks and routers** out of the box, such as [Fiber][fiber_url], [Gin][gin_url], [Echo][echo_url], [Chi][chi_url] and [HttpRouter][httprouter_url].
-- Supports the most popular **CSS frameworks** out of the box, such as [Tailwind CSS][tailwindcss_url], [daisyUI][daisyui_url], [Flowbite][flowbite_url], [UnoCSS][unocss_url], [Bootstrap][bootstrap_url] and [Bulma][bulma_url].
-- Supports a new **JavaScript runtime environment** called [Bun][bun_url] for the frontend.
-- Supports a way to **build HTML with Go** using the [Templ][templ_url] package.
-- Supports a **live-reload** mode for your Go code and frontend files using [Air][air_url] tool.
-- Includes a **basic config** for [golangci-lint][golangci_lint_url] for quick setup.
-- Ready-to-use Dockerfile and Docker Compose files to deploy your application in **any environment**.
-- Ready-to-install as **PWA** (Progressive Web App) in your browser or mobile device.
-- Has a library of **user-friendly** [helpers][gowebly_helpers_url] for your Go code.
+## 🎯 Features
+
+* 🔐 **Privacy**. All requests to third-party services occur in backend.
+* ⚡ **Real-time**. Interactive cards with extra information.
+* 🌎 **Multi-language**. Supports multiple languages.
+* 🎨 **Themes**. Customize the look to your liking.
+* 🗂️ **Grouping**. Create custom service groups.
+* 🏷️ **Tags**. Add tags to your services.
+* 👌 **Easy setup**. A few lines of yaml and your homepage is ready to go.
+* 🚀 **Fast**. Everything is fast and free of hang-ups.
+* 🐳 **Docker**. Optimized docker images for popular platforms.
+* ✨ **Free**. Mafl is completely free and open source.
+* 📲 **PWA**. Installable application.
+
+## 🚀 Getting started
 
 ## ⚡️ Quick start
 
