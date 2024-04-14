@@ -4,8 +4,6 @@
 
 <a name="readme-top"></a>
 
-# The Gowebly CLI
-
 A next-generation CLI tool that makes it easy to create amazing web applications<br/>with **Go** on the backend, using **htmx**, **hyperscript** or **Alpine.js**<br/>and the most popular **CSS** frameworks on the frontend.
 
 [![Go version][go_version_img]][go_dev_url]
