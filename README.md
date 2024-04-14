@@ -10,7 +10,7 @@ FlexiState is a nimble state management tool crafted for React apps. It offers e
 🎯 Getting started
 
 * 🔐 **Lightweight**.
-        FlexiState is designed to be lightweight, ensuring minimal impact on your application's performance.
+        <p>FlexiState is designed to be lightweight, ensuring minimal impact on your application's performance.</p>
 * ⚡ **Flexible State Management**. Easily manage complex application state with FlexiState's flexible and intuitive API.
 * 🌎 **Middleware Integration**. Seamlessly integrate custom middleware functions to handle asynchronous actions, logging, and other custom logic.
 * 🎨 **Adaptable**. FlexiState adapts to your project's needs, allowing you to create and manipulate state with ease.
