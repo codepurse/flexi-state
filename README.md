@@ -11,8 +11,8 @@ A nimble state manager for React. Effortlessly handle complex state, customize m
 ## Features
 
 * 🔐 **Lightweight** - Minimal performance impact with a focus on efficiency
-* ⚡ **Flexible State Management**. Easily handle and manipulate complex state structures.
-* 🌎 **Middleware Integration**. Seamlessly incorporate custom logic for actions, logging, and more.
+* ⚡ **Flexible State**. Easily handle and manipulate complex state structures.
+* 🌎 **Middleware**. Seamlessly incorporate custom logic for actions, logging, and more.
 * 🎨 **Adaptable**. Tailor FlexiState to suit the unique needs of your projec.
 * 🗂️ **Efficient Performance**. Maintains speed and responsiveness, even in demanding scenarios.
 * 🏷️ **Easy to Use**. Intuitive API and declarative approach for straightforward state management.
