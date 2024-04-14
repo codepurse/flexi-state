@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://gowebly.org" target="_blank" title="Go to the Gowebly CLI website"><img width="196px" alt="gowebly logo" src="https://raw.githubusercontent.com/gowebly/.github/main/images/gowebly-logo.svg"></a>
+<a href="https://gowebly.org" target="_blank" title="Go to the Gowebly CLI website"><img width="196px" alt="gowebly logo" src="https://i.ibb.co/yfj9L3y/logonobg.png"></a>
 
 <a name="readme-top"></a>
 
