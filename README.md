@@ -6,26 +6,6 @@
 
 FlexiState is a nimble state management tool crafted for React apps. It offers effortless handling of complex state while staying adaptable to your needs. With FlexiState, you can easily integrate custom middleware on the fly, giving you full control over your app's state flow. Say goodbye to boilerplate code and hello to a more flexible state management experience with FlexiState.
 
-[![Go version][go_version_img]][go_dev_url]
-[![Go report][go_report_img]][go_report_url]
-[![License][repo_license_img]][repo_license_url]
-
-**&searr;&nbsp;&nbsp;The official Gowebly CLI documentation&nbsp;&nbsp;&swarr;**
-
-[English][docs_url] · [Русский][docs_ru_url] · [简体中文][docs_zh_hk_url] · [Español][docs_es_url]
-
-**&searr;&nbsp;&nbsp;Share the project's link to your friends&nbsp;&nbsp;&swarr;**
-
-[![Share on X][x_share_img]][x_share_url]
-[![Share on Telegram][telegram_share_img]][telegram_share_url]
-[![Share on WhatsApp][whatsapp_share_img]][whatsapp_share_url]
-[![Share on Reddit][reddit_share_img]][reddit_share_url]
-
-<a href="https://gowebly.org" target="_blank" title="Go to the Gowebly CLI website"><img width="90%" alt="gowebly create command" src="https://raw.githubusercontent.com/gowebly/.github/main/images/gowebly_create.gif"></a>
-
-</div>
-
-
 ## 🎯 Features
 
 * 🔐 **Privacy**. All requests to third-party services occur in backend.
