@@ -9,15 +9,13 @@ FlexiState is a nimble state management tool crafted for React apps. It offers e
 </div>
 🎯 Getting started
 
-* 🔐 **Privacy**. All requests to third-party services occur in backend.
-* ⚡ **Real-time**. Interactive cards with extra information.
-* 🌎 **Multi-language**. Supports multiple languages.
-* 🎨 **Themes**. Customize the look to your liking.
-* 🗂️ **Grouping**. Create custom service groups.
-* 🏷️ **Tags**. Add tags to your services.
-* 👌 **Easy setup**. A few lines of yaml and your homepage is ready to go.
-* 🚀 **Fast**. Everything is fast and free of hang-ups.
-* 🐳 **Docker**. Optimized docker images for popular platforms.
-* ✨ **Free**. Mafl is completely free and open source.
-* 📲 **PWA**. Installable application.
+* 🔐 **Lightweight**. FlexiState is designed to be lightweight, ensuring minimal impact on your application's performance.
+* ⚡ **Flexible State Management**. Easily manage complex application state with FlexiState's flexible and intuitive API.
+* 🌎 **Middleware Integration**. Seamlessly integrate custom middleware functions to handle asynchronous actions, logging, and other custom logic.
+* 🎨 **Adaptable**. FlexiState adapts to your project's needs, allowing you to create and manipulate state with ease.
+* 🗂️ **Efficient Performance**. Despite its flexibility, FlexiState maintains efficient performance, even in demanding scenarios.
+* 🏷️ **Easy to Use**. With a declarative approach and intuitive API, FlexiState makes state management straightforward and hassle-free.
+* 👌 **Customizable**. Tailor FlexiState to suit your project's requirements, thanks to its customizable middleware and versatile architecture.
+* 🚀 **Boilerplate-Free**. Say goodbye to repetitive boilerplate code and hello to a streamlined state management experience with FlexiState.
+
 
