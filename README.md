@@ -4,7 +4,7 @@
 
 <a name="readme-top"></a>
 
-FlexiState is a nimble state management tool crafted for React apps. It offers effortless handling of complex state while staying adaptable to your needs. With FlexiState, you can easily integrate custom middleware on the fly, giving you full control over your app's state flow. Say goodbye to boilerplate code and hello to a more flexible state management experience with FlexiState..
+FlexiState is a nimble state management tool crafted for React apps. It offers effortless handling of complex state while staying adaptable to your needs. With FlexiState, you can easily integrate custom middleware on the fly, giving you full control over your app's state flow. Say goodbye to boilerplate code and hello to a more flexible state management experience with FlexiState.
 
 [![Go version][go_version_img]][go_dev_url]
 [![Go report][go_report_img]][go_report_url]
