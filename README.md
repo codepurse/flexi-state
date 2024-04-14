@@ -7,7 +7,8 @@
 A nimble state manager for React. Effortlessly handle complex state, customize middleware on the fly, and bid farewell to boilerplate. Enjoy flexibility without compromise.
 
 </div>
-🎯 Getting started
+
+## Features
 
 * 🔐 **Lightweight** - Minimal performance impact with a focus on efficiency
 * ⚡ **Flexible State Management**. Easily handle and manipulate complex state structures.
@@ -19,3 +20,15 @@ A nimble state manager for React. Effortlessly handle complex state, customize m
 * 🚀 **Boilerplate-Free**. Enjoy a streamlined state management experience, reducing repetitive code.
 
 
+## Getting started
+
+### Installing Specs
+
+You must also install `react` for Specks to work.
+
+```bash
+# Using npm
+npm install flexi-state
+# Using yarn
+yarn add flexi-state
+```
