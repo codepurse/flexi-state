@@ -117,4 +117,26 @@ export const useStore = createStore(
 );
 
 ```
+## Immer compability
+The `createStore` function is designed to work with the Immer library, which allows for easy handling of nested state updates.
+
+```jsx
+import { createStore } from "@codepurse/lite-state";
+import { produce } from "immer";
+
+export const useStore = createStore(() => ({
+  cat: {
+    cat1: {
+      cat2: {
+        cat3: 1,
+      },
+    },
+  },
+  setCat: (val) =>
+    produce((state) => {
+      state.cat.cat1.cat2.cat3 += val;
+    }),
+}));
+
+```
 
