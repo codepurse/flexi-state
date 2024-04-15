@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://gowebly.org" target="_blank"><img  alt="flexi-state logo" src="https://i.ibb.co/JjkD1b5/logonew-removebg-preview-1.png"></a>
+<a href="https://gowebly.org" target="_blank"><img width = "300px" alt="flexi-state logo" src="https://i.ibb.co/JjkD1b5/logonew-removebg-preview-1.png"></a>
 
 <a name="readme-top"></a>
 
@@ -82,14 +82,14 @@ Feel free to utilize any of the middleware already available in the middleware f
 
 
 ## Options
-The `createStore` function accepts an optional options object as its third parameter. This object allows you to customize the behavior of the state management system:
+The `createStore` function accepts an optional options object as its third parameter. This object allows you to customize the behavior of the state management system
 
 ```tsx
 export const useStore = createStore(initializeStore, [middleware1, middleware2, ...]);
 ```
 
 - `onPreStateChange` : A function that is called before the state is updated. It receives the current state and the new state as arguments, and can return a modified new state.
-- `onPostStateChange`: A function that is called after the state has been updated. It receives the updated state as an argument.
+- `onPostStateChange` : A function that is called after the state has been updated. It receives the updated state as an argument.
 
 ```jsx
 import { createStore } from "./createStore";
