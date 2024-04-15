@@ -22,7 +22,7 @@ A nimble state manager for React. Effortlessly handle complex state, customize m
 
 ## Getting started
 
-### Installing Specs
+### Installing 
 
 You must also install `react` for flexi-state to work.
 
@@ -31,4 +31,18 @@ You must also install `react` for flexi-state to work.
 npm install flexi-state
 # Using yarn
 yarn add flexi-state
+```
+
+### Basic Store
+
+```tsx
+import { createStore } from "./createStore";
+
+export const useStore = createStore(() => ({
+  cat: 3,
+  dog: 5,
+  setCat: (val) => (state) => ({ cat: state.cat + val }),
+  setDog: (val) => (state) => ({ dog: val }),
+}));
+
 ```
