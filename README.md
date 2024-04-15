@@ -24,7 +24,7 @@ A nimble state manager for React. Effortlessly handle complex state, customize m
 
 ### Installing Specs
 
-You must also install `react` for Specks to work.
+You must also install `react` for flexi-state to work.
 
 ```bash
 # Using npm
