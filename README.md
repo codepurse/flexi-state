@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://gowebly.org" target="_blank"><img width = "300px" alt="flexi-state logo" src="https://i.ibb.co/JjkD1b5/logonew-removebg-preview-1.png"></a>
+<a href="https://gowebly.org" target="_blank"><img width = "350px" alt="flexi-state logo" src="https://i.ibb.co/JjkD1b5/logonew-removebg-preview-1.png"></a>
 
 <a name="readme-top"></a>
 
