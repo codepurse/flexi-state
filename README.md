@@ -49,34 +49,19 @@ export const useStore = createStore(() => ({
 
 ## Usage
 
-### Selecting a state from the store
+### Getting a Selected State
+To get a selected state and the corresponding actions, you can pass a (`selector`) function to the useStore hook. The selector function takes the current state as an argument and returns the specific parts of the state you want to use in your component.
 
 ```tsx
-import { useStore } from "@/store";
-
-export default function Home() {
-  // 👇 Use this format for selected
-  const { cat, setCat } = useStore((state) => ({
-    cat: state.cat,
-    setCat: state.setCat,
-  }));
-
-  // 👇 Use this format if you want to get all state and actions
-  const { cat, setCat } = useStore();
-
-  return (
-    <div>
-      <button
-        onClick={() => {
-          setCat(1);
-        }}
-      >
-        Increase
-      </button>
-      {cat}
-    </div>
-  );
-}
+const { cat, setCat } = useStore((state) => ({ cat: state.cat, setCat: state.setCat }));
 ```
+
+### Getting the Entire State
+To get the entire state and all the actions, you can call the store hook youve created without passing a (`selector`) function.
+
+```tsx
+const { cat, setCat} = useStore();
+```
+
 
 
