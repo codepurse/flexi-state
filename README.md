@@ -72,5 +72,6 @@ To use middleware, you simply need to pass an array of middleware functions to t
 ```tsx
 export const useStore = createStore(initializeStore, [middleware1, middleware2, ...]);
 ```
+Feel free to utilize any of the middleware already available in the middleware folder of this repository. I purposely didn't include them directly in the package so you can easily modify them according to your needs.
 
 
