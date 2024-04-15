@@ -50,18 +50,27 @@ export const useStore = createStore(() => ({
 ## Usage
 
 ### Getting a Selected State
-To get a selected state and the corresponding actions, you can pass a (`selector`) function to the useStore hook. The selector function takes the current state as an argument and returns the specific parts of the state you want to use in your component.
+To get a selected state and the corresponding actions, you can pass a `selector` function to the useStore hook. The selector function takes the current state as an argument and returns the specific parts of the state you want to use in your component.
 
 ```tsx
 const { cat, setCat } = useStore((state) => ({ cat: state.cat, setCat: state.setCat }));
 ```
 
 ### Getting the Entire State
-To get the entire state and all the actions, you can call the store hook youve created without passing a (`selector`) function.
+To get the entire state and all the actions, you can call the store hook youve created without passing a `selector` function.
 
 ```tsx
 const { cat, setCat} = useStore();
 ```
+### Shallowing
+Flexi-state checks if the state you're interested in has changed by comparing its current value with the new one. It does this quickly without checking every detail of the state. This makes sure your components only update when they really need to, making your app faster.
 
+## Middleware
+The `createStore` function in your state management implementation supports the use of middleware. Middleware allows you to extend the functionality of your state management system by intercepting and modifying the `getState`, `setState`, `subscribe`, and `actions` operations.
+To use middleware, you simply need to pass an array of middleware functions to the `createStore` function.
+
+```tsx
+export const useStore = createStore(initializeStore, [middleware1, middleware2, ...]);
+```
 
 
