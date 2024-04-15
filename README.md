@@ -42,7 +42,41 @@ export const useStore = createStore(() => ({
   cat: 3,
   dog: 5,
   setCat: (val) => (state) => ({ cat: state.cat + val }),
-  setDog: (val) => (state) => ({ dog: val }),
+  setDog: (val) => () => ({ dog: val }),
 }));
 
 ```
+
+## Usage
+
+### Selecting a state from the store
+
+```tsx
+import { useStore } from "@/store";
+
+export default function Home() {
+  // 👇 Use this format for selected
+  const { cat, setCat } = useStore((state) => ({
+    cat: state.cat,
+    setCat: state.setCat,
+  }));
+
+  // 👇 Use this format if you want to get all state and actions
+  const { cat, setCat } = useStore();
+
+  return (
+    <div>
+      <button
+        onClick={() => {
+          setCat(1);
+        }}
+      >
+        Increase
+      </button>
+      {cat}
+    </div>
+  );
+}
+```
+
+
