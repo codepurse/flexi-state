@@ -85,10 +85,6 @@ Feel free to utilize any of the middleware already available in the middleware f
 ## Options
 The `createStore` function accepts an optional options object as its third parameter. This object allows you to customize the behavior of the state management system
 
-```tsx
-export const useStore = createStore(initializeStore, [middleware1, middleware2, ...]);
-```
-
 - `onPreStateChange` : A function that is called before the state is updated. It receives the current state and the new state as arguments, and can return a modified new state.
 - `onPostStateChange` : A function that is called after the state has been updated. It receives the updated state as an argument.
 
