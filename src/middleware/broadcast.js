@@ -1,4 +1,4 @@
-export const channelBroadcast = (broadcastKey) => {
+export const broadcast = (broadcastKey) => {
   let broadcastChannel = null;
 
   return (store) => {
