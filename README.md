@@ -79,6 +79,7 @@ Feel free to utilize any of the middleware already available in the middleware f
 | `preserve`                                                                               | It saves state between sessions.                    |
 | `broadcast`                                                                              | Share state between multiple tabs.                  |
 | `logging`                                                                                | A simple logging middleware.                        |
+| `undoRedo`                                                                               | Added actions for the undo and redo.                |
 
 
 ## Options
