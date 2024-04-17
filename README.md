@@ -80,6 +80,7 @@ Feel free to utilize any of the middleware already available in the middleware f
 | `broadcast`                                                                              | Share state between multiple tabs.                  |
 | `logging`                                                                                | A simple logging middleware.                        |
 | `undoRedo`                                                                               | Added actions for the undo and redo.                |
+| `devTools`                                                                               | Simple integration of redux devtools.               |
 
 
 ## Options
