@@ -138,3 +138,32 @@ export const useStore = createStore(() => ({
 
 ```
 
+## Combining a store
+You can combine a multiple store into one store using the `createRootStore`. 
+> [!IMPORTANT]  
+> Adding middleware are not supported in `createRootStore`. Middleware should be added in the `createStore` directly.
+
+```jsx
+import { createStore } from "./createStore";
+
+export const useBear = createStore(() => ({
+  bear: 3,
+  setBear: (val) => (state) => ({ bear: state.bear + val }),
+}));
+
+export const useLion = createStore(() => ({
+  lion: 3,
+  setLion: (val) => (state) => ({ lion: state.lion + val }),
+}));
+```
+
+```jsx
+import { useBear, useLion } from "./anotherStore";
+import { createRootStore } from "./util/component/createRootStore";
+
+export const useStore = createRootStore({
+  lion: useLion,
+  bear: useBear,
+});
+```
+
